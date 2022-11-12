@@ -68,7 +68,7 @@ def main(label):
 
     poseCount = 0
     while True:
-        if poseCount > 49:
+        if poseCount > 199:
             break
 
         ret, frame = vid.read()
@@ -153,4 +153,4 @@ def csvLogger(label, normalized):
         writer.writerow([label, *normalized])
 
 if __name__ == '__main__':
-    main(1)
+    main(36)
