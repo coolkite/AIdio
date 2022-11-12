@@ -153,4 +153,4 @@ def csvLogger(label, normalized):
         writer.writerow([label, *normalized])
 
 if __name__ == '__main__':
-    main(29)
+    main(28)

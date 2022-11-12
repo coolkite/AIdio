@@ -57,7 +57,7 @@ def main():
             min_tracking_confidence= min_tracking_confidence
             )
 
-    model = tf.keras.models.load_model('final.h5')
+    model = tf.keras.models.load_model('finalV2.h5')
     mapping = {
                 0:"0",
                 1:"1",
@@ -65,7 +65,7 @@ def main():
                 3:"3",
                 4:"4",
                 5:"5",
-                6:"9",
+                6:"F",
                 7:"7",
                 8:"8",
                 9:"6",
@@ -74,7 +74,7 @@ def main():
                 12:"C",
                 13:"D",
                 14:"E",
-                15:"F",
+                15:"9",
                 16:"G",
                 17:"H",
                 18:"I",
