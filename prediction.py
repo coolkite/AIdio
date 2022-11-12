@@ -57,7 +57,7 @@ def main():
             min_tracking_confidence= min_tracking_confidence
             )
 
-    model = tf.saved_model.load('9621v3.pb')
+    model = tf.keras.models.load_model('final.h5')
     mapping = {
                 0:"0",
                 1:"1",
@@ -65,10 +65,10 @@ def main():
                 3:"3",
                 4:"4",
                 5:"5",
-                6:"6",
+                6:"9",
                 7:"7",
                 8:"8",
-                9:"9",
+                9:"6",
                 10:"A",
                 11:"B",
                 12:"C",
