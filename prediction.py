@@ -57,7 +57,7 @@ def main():
             min_tracking_confidence= min_tracking_confidence
             )
 
-    model = tf.saved_model.load('9621v3.pb')
+    model = tf.keras.models.load_model('9422v1.h5')
 
     while True:
         ret, frame = vid.read()
