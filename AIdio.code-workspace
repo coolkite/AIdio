@@ -9,5 +9,10 @@
 		{
 			"path": "."
 		}
-	]
+	],
+	"settings": {
+		"liveshare.allowGuestDebugControl": true,
+		"liveshare.allowGuestTaskControl": true,
+		"liveshare.notebooks.allowGuestExecuteCells": true
+	}
 }
