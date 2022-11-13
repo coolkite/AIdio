@@ -1,8 +1,7 @@
 Programming Languages:  
 Python  
 
-Training Set:
-
+Training Set:  
 import argparse  
 import copy  
 import itertools  
@@ -12,8 +11,7 @@ import cv2
 import mediapipe    
 import numpy  
 
-Prediction for Training Set:
-
+Prediction for Training Set:  
 import argparse  
 import copy  
 import itertools   
@@ -25,8 +23,7 @@ import mediapipe
 import numpy  
 import tensorflow  
 
-Website:
-
+Website:  
 HTML5  
 CSS3  
 JavaScript  
