@@ -1,3 +1,6 @@
+Programming Languages:  
+Python  
+
 Training Set:
 
 import argparse  
@@ -21,3 +24,9 @@ from cv2 import rectangle
 import mediapipe  
 import numpy  
 import tensorflow  
+
+Website:
+
+HTML5  
+CSS3  
+JavaScript  
