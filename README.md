@@ -60,5 +60,5 @@ dshivashok@umass.edu, tmdang@umass.edu, znip@umass.edu, jicohen@umass.edu
 
 Who maintains and contributes to the project:
 
-Divyansh, Zara, Jacob, and Trung for 2022 HackUMass
+Divyansh, Zara, Jacob, and Trung for 2022 HackUMass  
 dshivashok@umass.edu, znip@umass.edu, jicohen@umass.edu, tmdang@umass.edu
