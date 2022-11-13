@@ -1,8 +1,8 @@
 What the project does:
 
-Uses Machine Learning to (1) convert American Sign Language to text and (2) convert real time live-stream speech to text.
+Uses Machine Learning to (1) convert American Sign Language to text and (2) convert real time live-stream speech to text. Circumvents racial and ethnic bias in training set due to original, self-made algorithm. Implemented with Python, HTML, CSS, JavaScript, and various other libraries.
 
-Why the project is useful and Inspiration:
+Why the project is useful and inspiration:
 
 American Sign Language users can use our ASL-to-text platform as a means of learning, getting instant feedback on signed word arrangements, and as a means of expression to communicate with non-ASL users. Our video call-based speech-to-text converter also hosts transcribing capabilities not yet offered on popular platforms like WhatsApp, Line, and Discord. Heightened by COVID-19, those who are hard of hearing might have difficulty lip-reading or be unable to reproduce real life conversations over online platforms due to a host of reasons. We hope our web app can circumvent that.
 
@@ -45,7 +45,7 @@ All of us learned about deploying Tensorflow and other related Machine Learning 
 
 What's next for our hack:
 
-Expanding our library of ASL words! With our automated data training methodology (script found in this Github), we can continually push new words into our model in 10 minutes or less. We are also looking at other potential implimations of our model for low-scale rollout. Our model surpasses most other CNN models in terms of speed and ease of uploading new files, and there are many organizations and opportunities that we could apply to in the future.
+Expanding our library of ASL words! With our automated data training methodology (script found in this Github), we can continually push new words into our model in 10 minutes or less. We are also looking at other potential implimations of our model for low-scale rollout. Our model surpasses most other CNN models in terms of speed and ease of uploading new files, and we would love to help make the world more accessible.
 
 
 How users can get started with the project:
