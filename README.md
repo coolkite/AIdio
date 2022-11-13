@@ -9,7 +9,7 @@ American Sign Language users can use our ASL-to-text platform as a means of lear
 
 How we built it:
 
-We use a total of three Machine Learning models: (1) identify hand joints for training data, (2) recgonize American Sign Language words, and (3) process speech to text.
+We use a total of three Machine Learning models: (1) identify hand joints for training data, (2) recognize American Sign Language words, and (3) process speech to text.
 
 ASL-to-Text
 
