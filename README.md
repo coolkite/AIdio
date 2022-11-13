@@ -8,8 +8,8 @@ How users can get started with the project:
 Head to our python-implemented models on our website. 
 
 Where users can get help with your project:
-mailto:znip@umass.edu
+znip@umass.edu
 
 Who maintains and contributes to the project:
 Divyansh, Zara, Jacob, and Trung for 2022 HackUMass
-mailto:znip@umass.edu
+znip@umass.edu
