@@ -172,8 +172,8 @@ def main():
                     frameCopy,
                     hand_landmarks,
                     mp_hands.HAND_CONNECTIONS,
-                    mp_drawing_styles.get_default_hand_landmarks_style(),
-                    mp_drawing_styles.get_default_hand_connections_style()
+                    mp_drawing_styles.DrawingSpec(color=(16,125,185), thickness=4, circle_radius=4),
+                    mp_drawing_styles.DrawingSpec(color=(5,5,170), thickness=3, circle_radius=2)
                     )
                     
             cv2.putText(frameCopy, 
