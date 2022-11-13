@@ -28,7 +28,7 @@ Learning how to create and use a large data (in excess of over 200 images per wo
 
 Creating an online video-chatting system similar to Zoom on our website. We have to host our own platform from scratch.
 
-Configuring versions of Python to be compatible with different libraries. For an example, we had issues installing pyaudio on Mac computers (owned by 3 out of teammates), Mediapipe, and Tensorflow. These libraries often work with very specific versions like Python 3.10.8 rather than 3.11 which is the newest version.
+Configuring versions of Python to be compatible with different libraries. For an example, we had issues installing pyaudio (and similarly portaudio for building the wheels of this module) on three of the four computers, Mediapipe, and Tensorflow. These libraries often work with very specific versions like Python 3.10.8 rather than 3.11 which is the newest version. 
 
 
 Accomplishments you are proud of:
