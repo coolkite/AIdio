@@ -201,9 +201,9 @@ def main():
                         2, 
                         cv2.LINE_4)
 
-            rectangle(frameCopy, (380, 570), (425+len(sentence)*20, 615), (0, 0, 0), -1)
-            cv2.putText(img=frameCopy, text=sentence, org=(400, 600), fontFace=cv2.FONT_HERSHEY_COMPLEX , fontScale=1, color=[0, 0, 0], lineType=cv2.LINE_AA, thickness=4)
-            cv2.putText(img=frameCopy, text=sentence, org=(400, 600), fontFace=cv2.FONT_HERSHEY_COMPLEX , fontScale=1, color=[255, 255, 255], lineType=cv2.LINE_AA, thickness=2)
+            rectangle(frameCopy, (330, 415), (340+len(sentence)*25, 460), (0, 0, 0), -1)
+            cv2.putText(img=frameCopy, text=sentence, org=(350, 450), fontFace=cv2.FONT_HERSHEY_COMPLEX , fontScale=1, color=[0, 0, 0], lineType=cv2.LINE_AA, thickness=4)
+            cv2.putText(img=frameCopy, text=sentence, org=(350, 450), fontFace=cv2.FONT_HERSHEY_COMPLEX , fontScale=1, color=[255, 255, 255], lineType=cv2.LINE_AA, thickness=2)
         cv2.imshow('hand detection', frameCopy)        
         # if cv2.waitKey(5) & 0xFF == ord('q'):
         #     break
