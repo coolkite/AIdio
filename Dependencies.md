@@ -23,6 +23,15 @@ import mediapipe
 import numpy  
 import tensorflow  
 
+Video Call Client:  
+import socket, sys, cv2, pickle, struct
+from threading import Thread
+from datetime import datetime
+from time import sleep
+import matplotlib.pyplot
+import numpy
+import pyaudio
+
 Website:  
 HTML5  
 CSS3  
