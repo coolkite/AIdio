@@ -1,6 +1,7 @@
 import argparse
 import copy
 import itertools
+import time
 
 import cv2
 import mediapipe as mp
@@ -56,7 +57,7 @@ def main():
             min_tracking_confidence= min_tracking_confidence
             )
 
-    #model = tf.keras.models.load_model('finalV4.h5')
+    model = tf.keras.models.load_model('finalV4.h5')
     mapping = {
                 0:"0",
                 1:"1",
@@ -96,6 +97,12 @@ def main():
                 35:"Z",
                 36:"SPACE"
             }
+    
+
+#do some stuff
+    frameCount = 0
+    spaceCount = 0
+    sentence = ""
     while True:
         ret, frame = vid.read()
         if ret == False:
@@ -112,6 +119,7 @@ def main():
 
         if results.multi_hand_landmarks:
             for hand_landmarks in results.multi_hand_landmarks:
+                frameCount += 1
                 handCoordinates = []
                 frame_W = frameCopy.shape[1]
                 frame_H = frameCopy.shape[0]
@@ -140,10 +148,25 @@ def main():
                     flattened[i] /= argMax
 
 
-                # prediction = model.predict(np.array([flattened]))
-                # squeezed = np.squeeze(prediction)
-                # result = mapping[np.argmax(squeezed)]
-                
+                prediction = model.predict(np.array([flattened]))
+                squeezed = np.squeeze(prediction)
+                result = mapping[np.argmax(squeezed)]
+                print(frameCount)
+                if frameCount == 15:    
+                    if result == "SPACE":
+                        sentence += " "
+                        spaceCount += 1
+
+                    elif spaceCount < 5:
+                            sentence += result
+
+                    else:
+                        spaceCount = 0
+                        sentence = ""
+                    frameCount = 0
+
+
+                print(sentence)
                 mp_drawing.draw_landmarks(
                     frameCopy,
                     hand_landmarks,
@@ -152,14 +175,18 @@ def main():
                     mp_drawing_styles.get_default_hand_connections_style()
                     )
                     
-                # cv2.putText(frameCopy, 
-                #             str(mapping[result]), 
-                #             (50, 50), 
-                #             cv2.FONT_HERSHEY_SIMPLEX, 
-                #             1, 
-                #             (0, 255, 255), 
-                #             2, 
-                #             cv2.LINE_4)
+            cv2.putText(frameCopy, 
+                        result, 
+                        (50, 50), 
+                        cv2.FONT_HERSHEY_SIMPLEX, 
+                        1, 
+                        (0, 255, 255), 
+                        2, 
+                        cv2.LINE_4)
+
+   
+            cv2.putText(frameCopy, sentence, (150,450), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_4)
+    
         cv2.imshow('hand detection', frameCopy)
         
         
