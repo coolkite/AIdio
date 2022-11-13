@@ -15,7 +15,7 @@ ASL-to-Text
 
 Early on in the project, we had trouble finding ways to identify ASL hand signs efficiently in less than HackUMass' designated 36 hours. Passing in pixelated videos and pictures as parameters to Tensorflow takes several hours to days to render and process because colors and exact coordinates are passed directly into the CNN model.
 
-Our solution is to map hand joints, normalize the ratio of each joint to a certain point at the bottom of the hand between the range [0,-1], and pass in a CSV file of matrices (containing only floats). This way, we are able to train our model at a much faster rate and load the data within the bounds of one hour compared to the many hours a CNN would take. The entire dataset is produced by our team. Our lighting in a moderatly lit classroom has almost no impact on our results. Likewise, due to the lack of parametized RGB values, there is no ethnic or racial bias in our model.
+Our solution is to map hand joints, normalize the ratio of each joint to a certain point at the bottom of the hand between the range [0,-1], and pass in a CSV file of matrices (containing only floats). This way, we are able to train our model at a much faster rate and load the data within the bounds of one hour compared to the many hours a CNN would take. The entire dataset is produced by our team. Our lighting in a moderately lit classroom has almost no impact on our results. Likewise, due to the lack of parametrized RGB values, there is no ethnic or racial bias in our model.
 
 Speech-to-Text
 
