@@ -1,19 +1,15 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;" lang="en"><head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Machine Learning">
+    <meta name="keywords" content="Encoder, Decoder">
     <meta name="description" content="">
-    <title>Algorithm</title>
-    <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="Algorithm.css" media="screen">
-    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <title>Demo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'styles/nicepage.css') }}" media="screen">
+<link rel="stylesheet" href="{{ url_for('static', filename = 'styles/Algorithm.css') }}" media="screen">
+    <script class="u-script" type="text/javascript" src="{{ url_for('static', filename = 'jquery.js') }}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{{ url_for('static', filename = 'nicepage.js') }}" defer=""></script>
     <meta name="generator" content="Nicepage 4.21.12, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-    
-    
-    
     
     
     
@@ -21,15 +17,15 @@
 		"@context": "http://schema.org",
 		"@type": "Organization",
 		"name": "AIdio",
-		"logo": "images/Screen_Shot_2022-11-12_at_10.26.11_AM-removebg-preview.png"
+		"logo": "{{ url_for('static', filename = 'images/logo.png') }}"
 }</script>
     <meta name="theme-color" content="#b0d38e">
-    <meta property="og:title" content="Algorithm">
+    <meta property="og:title" content="Demo">
     <meta property="og:type" content="website">
   </head>
   <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-header" id="sec-7cec"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="Home.html" class="u-image u-logo u-image-1" data-image-width="418" data-image-height="167" title="Home">
-          <img src="images/Screen_Shot_2022-11-12_at_10.26.11_AM-removebg-preview.png" class="u-logo-image u-logo-image-1">
+        <a href="../Home.html" class="u-image u-logo u-image-1" data-image-width="418" data-image-height="167" title="Home">
+          <img src="{{ url_for('static', filename = 'images/logo.png') }}" class="u-logo-image u-logo-image-1">
         </a>
         <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1" data-responsive-from="MD">
           <div class="menu-collapse" style="font-size: 1.25rem; letter-spacing: 0px;">
@@ -64,7 +60,7 @@
           </div>
         </nav>
       </div></header>
-    <section class="u-align-left u-clearfix u-image u-shading u-section-1" src="" data-image-width="3024" data-image-height="4032" id="sec-2b39">
+    <section class="u-align-left u-clearfix u-image u-shading u-section-1" src="{{ url_for('static', filename = 'images/IMG_0397.jpg') }}" data-image-width="3024" data-image-height="4032" id="sec-2b39">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <h1 class="u-text u-text-default u-title u-text-1">Speech to text with&nbsp;<br>streaming input
         </h1>
@@ -78,7 +74,7 @@
         <div class="u-clearfix u-expanded-width u-gutter-10 u-layout-wrap u-layout-wrap-1">
           <div class="u-layout" style="">
             <div class="u-layout-row" style="">
-              <div class="u-container-style u-layout-cell u-left-cell u-size-30 u-size-xs-60 u-layout-cell-1" src="">
+              <div class="u-container-style u-layout-cell u-left-cell u-size-30 u-size-xs-60 u-layout-cell-1" src="{{ url_for('static', filename = 'images/80b82ff9fcb7da36c1d58fecfcee6f8870c2c90e0635388eec6f7ac0b1806899b08465f8d63bcb610769b7e592777d169a829b4bbc36242fdc0826_1280.png') }}">
                 <div class="u-container-layout u-container-layout-1">
                   <h2 class="u-align-center u-text u-text-default u-text-1">Machine Learning</h2>
                   <p class="u-align-center u-text u-text-2">We implemented a total of 3 machine learning models:&nbsp;<br>(1) identify hand joints for training data,<br>(2) recgonize American Sign Language words,&nbsp;<br>(3) process speech to text.
@@ -98,7 +94,7 @@
         <div class="u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
           <div class="u-layout" style="">
             <div class="u-layout-row" style="">
-              <div class="u-align-left u-container-style u-image u-layout-cell u-left-cell u-shading u-size-30 u-size-xs-60 u-image-1" src="" data-image-width="3024" data-image-height="4032">
+              <div class="u-align-left u-container-style u-image u-layout-cell u-left-cell u-shading u-size-30 u-size-xs-60 u-image-1" src="{{ url_for('static', filename = 'images/IMG_0398.jpg') }}" data-image-width="3024" data-image-height="4032">
                 <div class="u-container-layout u-container-layout-1" src=""></div>
               </div>
               <div class="u-align-left u-container-style u-grey-5 u-layout-cell u-right-cell u-size-30 u-size-xs-60 u-layout-cell-2">

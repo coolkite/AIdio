@@ -1,33 +1,31 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;" lang="en"><head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="About Our Team">
+    <meta name="keywords" content="Encoder, Decoder">
     <meta name="description" content="">
-    <title>Our Team</title>
-    <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="Our-Team.css" media="screen">
-    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <title>Demo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'styles/nicepage.css') }}" media="screen">
+<link rel="stylesheet" href="{{ url_for('static', filename = 'styles/Our-Team.css') }}" media="screen">
+    <script class="u-script" type="text/javascript" src="{{ url_for('static', filename = 'jquery.js') }}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{{ url_for('static', filename = 'nicepage.js') }}" defer=""></script>
     <meta name="generator" content="Nicepage 4.21.12, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     
     
     
-    <script type="application/ld+json">{
+    <script type="application/ld+json">
 		"@context": "http://schema.org",
 		"@type": "Organization",
 		"name": "AIdio",
-		"logo": "images/Screen_Shot_2022-11-12_at_10.26.11_AM-removebg-preview.png"
+		"logo": "{{ url_for('static', filename = 'images/logo.png') }}"
 }</script>
     <meta name="theme-color" content="#b0d38e">
-    <meta property="og:title" content="Our Team">
+    <meta property="og:title" content="Demo">
     <meta property="og:type" content="website">
   </head>
   <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-header" id="sec-7cec"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="Home.html" class="u-image u-logo u-image-1" data-image-width="418" data-image-height="167" title="Home">
-          <img src="images/Screen_Shot_2022-11-12_at_10.26.11_AM-removebg-preview.png" class="u-logo-image u-logo-image-1">
-        </a>
+        <a href="../Home.html" class="u-image u-logo u-image-1" data-image-width="418" data-image-height="167" title="Home">
+          <img src="{{ url_for('static', filename = 'images/logo.png') }}" class="u-logo-image u-logo-image-1"> </a>
         <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1" data-responsive-from="MD">
           <div class="menu-collapse" style="font-size: 1.25rem; letter-spacing: 0px;">
             <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
@@ -89,7 +87,7 @@
               </div>
               <div class="u-size-20 u-size-30-md">
                 <div class="u-layout-row">
-                  <div class="u-align-left u-container-style u-image u-layout-cell u-size-60 u-image-1" src="" data-image-width="2316" data-image-height="3088">
+                  <div class="u-align-left u-container-style u-image u-layout-cell u-size-60 u-image-1" src="../static/images/IMG_0385.jpg" data-image-width="2316" data-image-height="3088">
                     <div class="u-container-layout u-valign-top u-container-layout-3" src=""></div>
                   </div>
                 </div>

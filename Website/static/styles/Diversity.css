@@ -1,5 +1,5 @@
  .u-section-1 {
-  background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("images/IMG_0397.jpg");
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../images/IMG_0397.jpg");
   background-position: 50% 50%;
 }
 
@@ -83,7 +83,7 @@
 
 .u-section-2 .u-image-1 {
   min-height: 431px;
-  background-image: url("images/80b82ff9fcb7da36c1d58fecfcee6f8870c2c90e0635388eec6f7ac0b1806899b08465f8d63bcb610769b7e592777d169a829b4bbc36242fdc0826_1280.png");
+  background-image: url("../images/diversity.webp");
   background-position: 50% 50%;
 }
 
@@ -91,7 +91,7 @@
   padding: 30px 60px;
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1000px) {
   .u-section-2 .u-sheet-1 {
     min-height: 100px;
   }
@@ -155,7 +155,7 @@
 
 .u-section-3 .u-image-1 {
   min-height: 572px;
-  background-image: linear-gradient(0deg, rgba(255,255,255,0.05), rgba(255,255,255,0.05)), url("images/IMG_0398.jpg");
+  background-image: linear-gradient(0deg, rgba(255,255,255,0.05), rgba(255,255,255,0.05)), url("../images/IMG_0398.jpg");
   background-position: 50% 50%;
   background-size: 145%;
 }

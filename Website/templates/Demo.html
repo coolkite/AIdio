@@ -5,10 +5,10 @@
     <meta name="keywords" content="Encoder, Decoder">
     <meta name="description" content="">
     <title>Demo</title>
-    <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="Demo.css" media="screen">
-    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'styles/nicepage.css') }}" media="screen">
+<link rel="stylesheet" href="{{ url_for('static', filename = 'styles/Demo.css') }}" media="screen">
+    <script class="u-script" type="text/javascript" src="{{ url_for('static', filename = 'jquery.js') }}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{{ url_for('static', filename = 'nicepage.js') }}" defer=""></script>
     <meta name="generator" content="Nicepage 4.21.12, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     
@@ -18,15 +18,15 @@
 		"@context": "http://schema.org",
 		"@type": "Organization",
 		"name": "AIdio",
-		"logo": "images/Screen_Shot_2022-11-12_at_10.26.11_AM-removebg-preview.png"
+		"logo": "{{ url_for('static', filename = 'images/logo.png') }}"
 }</script>
     <meta name="theme-color" content="#b0d38e">
     <meta property="og:title" content="Demo">
     <meta property="og:type" content="website">
   </head>
   <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-header" id="sec-7cec"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="Home.html" class="u-image u-logo u-image-1" data-image-width="418" data-image-height="167" title="Home">
-          <img src="images/Screen_Shot_2022-11-12_at_10.26.11_AM-removebg-preview.png" class="u-logo-image u-logo-image-1">
+        <a href="../Home.html" class="u-image u-logo u-image-1" data-image-width="418" data-image-height="167" title="Home">
+          <img src="{{ url_for('static', filename = 'images/logo.png') }}" class="u-logo-image u-logo-image-1">
         </a>
         <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1" data-responsive-from="MD">
           <div class="menu-collapse" style="font-size: 1.25rem; letter-spacing: 0px;">
@@ -65,13 +65,126 @@
       <div class="u-clearfix u-sheet u-sheet-1">
         <h1 class="u-text u-text-default u-text-1">Demos</h1>
         <h2 class="u-text u-text-default u-text-2">Encoder</h2>
+        <img id="whatever" src= "{{ url_for('video_feed') }}" >
       </div>
     </section>
     <section class="u-clearfix u-section-2" id="sec-8eec">
       <div class="u-clearfix u-sheet u-sheet-1">
         <h2 class="u-text u-text-1">Decoder<br>
         </h2>
-        <p class="u-text u-text-default u-text-2">INSERT DECODER TEXT HEREHEHRHERHREHERHREHERH A GOOD TAGLINE</p>
+        <img id="whatever" src= "{{ url_for('video_feed') }}">
+        <h2>Transcript</h2>
+  <div id="transcript"></div>
+  <script>
+    console.log("script run")
+    var app = {
+      socket:  null,
+      mediaTrack: null,
+      counter: 0,
+      bufferSize: 4096,
+      main: function() {
+        this.socket = new WebSocket("ws://localhost:8000/stream");
+        console.log("web hosted")
+        this.socket.addEventListener("open", this.onSocketOpen.bind(this));
+        console.log("websocket opened")
+        this.socket.addEventListener("message", this.onSocketMessage.bind(this));
+        console.log("socket message")
+      },
+      onSocketOpen: function(event) {
+        this.initRecorder();
+        console.log("onSocketOpen", event);
+      },
+      onSocketMessage: function(event) {
+        console.log("Message", event.data);
+	document.getElementById("transcript").innerHTML += "<p>" + event.data + "</p>"
+      },
+      shimAudioContext: function() {
+        try {
+          // Shims
+          window.AudioContext = window.AudioContext || window.webkitAudioContext;
+          navigator.getUserMedia = navigator.getUserMedia ||
+              navigator.webkitGetUserMedia ||
+              navigator.mozGetUserMedia ||
+              navigator.msGetUserMedia;
+        } catch (e) {
+          alert("Your browser is not supported");
+          return false;
+        }
+
+        if(!navigator.getUserMedia || !window.AudioContext) {
+          alert("Your browser is not supported");
+          return false;
+        }
+        return true;
+      },
+      isOpen: function(ws) { return ws.readyState === ws.OPEN },
+      initRecorder: function() {
+        // shim audio context
+        if (!this.shimAudioContext()) {
+          return;
+        }
+
+        return navigator.mediaDevices.getUserMedia({"audio": true, "video": false}).then((stream) => {
+          var context = new window.AudioContext();
+
+          // send metadata on audio stream to backend
+          this.socket.send(JSON.stringify({
+            event: "config",
+            rate: context.sampleRate,
+            language: "en-US",
+            format: "LINEAR16"
+          }));
+
+          // Caputure mic audio data into a stream
+          var audioInput = context.createMediaStreamSource(stream);
+
+          // only record mono audio w/a buffer of 2048 bits per function call
+          var recorder = context.createScriptProcessor(this.bufferSize, 1, 1);
+
+          // specify the processing function
+          recorder.onaudioprocess = this.audioProcess.bind(this);
+
+          // connect stream to our recorder
+          audioInput.connect(recorder);
+
+          // connect recorder to previous destination
+          recorder.connect(context.destination);
+
+          // store media track
+          this.mediaTrack = stream.getTracks()[0];
+        });
+      },
+      float32To16BitPCM: function(float32Arr) {
+        var pcm16bit = new Int16Array(float32Arr.length);
+        for(var i = 0; i < float32Arr.length; ++i) {
+
+          // force number in [-1,1]
+          var s = Math.max(-1, Math.min(1, float32Arr[i]));
+
+          /**
+           * convert 32 bit float to 16 bit int pcm audio
+           * 0x8000 = minimum int16 value, 0x7fff = maximum int16 value
+           */
+          pcm16bit[i] = s < 0 ? s * 0x8000 : s * 0x7FFF;
+        }
+        return pcm16bit;
+      },
+      audioProcess: function(event) {
+        // only 1 channel as specified above.....
+        var float32Audio = event.inputBuffer.getChannelData(0) || new Float32Array(this.bufferSize);
+        var pcm16Audio = this.float32To16BitPCM(float32Audio);
+        if (!this.isOpen(this.socket)) return;
+        this.socket.send(pcm16Audio.buffer);
+
+      }
+    };
+    app.main();
+  </script>
+
+
+
+
+
       </div>
     </section>
     
