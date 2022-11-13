@@ -7,9 +7,9 @@ American Sign Language users can use our ASL-to-text platform as a means of lear
 How users can get started with the project:
 Head to our python-implemented models on our website. 
 
-Where users can get help with your project:
-znip@umass.edu
+Where users can get help with your project: 
+dshivashok@umass.edu, tmdang@umass.edu, znip@umass.edu, jicohen@umass.edu
 
 Who maintains and contributes to the project:
 Divyansh, Zara, Jacob, and Trung for 2022 HackUMass
-znip@umass.edu
+dshivashok@umass.edu, znip@umass.edu, jicohen@umass.edu, tmdang@umass.edu
