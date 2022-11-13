@@ -7,7 +7,6 @@ import mediapipe as mp
 import numpy as np
 import tensorflow as tf
 
-
 def get_args():
     parser = argparse.ArgumentParser()
 
@@ -57,7 +56,7 @@ def main():
             min_tracking_confidence= min_tracking_confidence
             )
 
-    model = tf.keras.models.load_model('finalV4.h5')
+    #model = tf.keras.models.load_model('finalV4.h5')
     mapping = {
                 0:"0",
                 1:"1",
@@ -141,9 +140,9 @@ def main():
                     flattened[i] /= argMax
 
 
-                prediction = model.predict(np.array([flattened]))
-                squeezed = np.squeeze(prediction)
-                result = mapping[np.argmax(squeezed)]
+                # prediction = model.predict(np.array([flattened]))
+                # squeezed = np.squeeze(prediction)
+                # result = mapping[np.argmax(squeezed)]
                 
                 mp_drawing.draw_landmarks(
                     frameCopy,
@@ -153,14 +152,14 @@ def main():
                     mp_drawing_styles.get_default_hand_connections_style()
                     )
                     
-                cv2.putText(frameCopy, 
-                            str(result), 
-                            (50, 50), 
-                            cv2.FONT_HERSHEY_SIMPLEX, 
-                            1, 
-                            (0, 255, 255), 
-                            2, 
-                            cv2.LINE_4)
+                # cv2.putText(frameCopy, 
+                #             str(mapping[result]), 
+                #             (50, 50), 
+                #             cv2.FONT_HERSHEY_SIMPLEX, 
+                #             1, 
+                #             (0, 255, 255), 
+                #             2, 
+                #             cv2.LINE_4)
         cv2.imshow('hand detection', frameCopy)
         
         
