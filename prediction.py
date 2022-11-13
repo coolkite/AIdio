@@ -4,6 +4,7 @@ import itertools
 import time
 
 import cv2
+from cv2 import rectangle
 import mediapipe as mp
 import numpy as np
 import tensorflow as tf
@@ -51,7 +52,7 @@ def main():
 
     hands = mp_hands.Hands(
             static_image_mode=use_static_image_mode,
-            max_num_hands=2,
+            max_num_hands=1,
             model_complexity=0,
             min_detection_confidence = min_detection_confidence,
             min_tracking_confidence= min_tracking_confidence
@@ -157,7 +158,7 @@ def main():
                         sentence += " "
                         spaceCount += 1
 
-                    elif spaceCount < 5:
+                    elif spaceCount < 3:
                             sentence += result
 
                     else:
@@ -184,9 +185,9 @@ def main():
                         2, 
                         cv2.LINE_4)
 
-   
-            cv2.putText(frameCopy, sentence, (150,450), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_4)
-    
+            rectangle(frameCopy, (380, 570), (425+len(sentence)*20, 615), (0, 0, 0), -1)
+            cv2.putText(img=frameCopy, text=sentence, org=(400, 600), fontFace=cv2.FONT_HERSHEY_COMPLEX , fontScale=1, color=[0, 0, 0], lineType=cv2.LINE_AA, thickness=4)
+            cv2.putText(img=frameCopy, text=sentence, org=(400, 600), fontFace=cv2.FONT_HERSHEY_COMPLEX , fontScale=1, color=[255, 255, 255], lineType=cv2.LINE_AA, thickness=2)
         cv2.imshow('hand detection', frameCopy)
         
         
