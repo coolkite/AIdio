@@ -1,3 +1,4 @@
+![build succeeded](https://img.shields.io/badge/build-succeeded-brightgreen.svg)
 ## What AIdio does:
 
 Uses Machine Learning to (1) convert American Sign Language to text and (2) convert real time live-stream speech to text. Circumvents racial and ethnic bias in training set due to original, self-made algorithm. Implemented with Python, HTML, CSS, JavaScript, and various other libraries.
