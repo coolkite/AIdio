@@ -85,6 +85,3 @@ Run main.py file
     <td align="center"><sub><b>Lead Data Engineer and Deployment</br>Full Stack Assistant</b></sub></a></td>
   </tr>
 </table>
-
-Divyansh, Zara, Jacob, and Trung for 2022 HackUMass  
-dshivashok@umass.edu, znip@umass.edu, jicohen@umass.edu, tmdang@umass.edu
