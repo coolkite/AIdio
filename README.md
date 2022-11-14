@@ -66,6 +66,7 @@ Clone the repository at:
 ```
 gh repo clone dmtrung14/AIdio
 ```
+You want to clone the Website branch, not the main branch
 
 Install tensorflow, pyaudio, flask_sockets, and opencv-python using: 
 ```
