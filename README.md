@@ -15,8 +15,8 @@ American Sign Language users can use our ASL-to-text platform as a means of lear
 - [Features](#features)
 - [Technologies](#technologies)
 - [Accomplishments](#accomplishment)
+- [Deploying Locally](#deploying-locally)
 - [Contributors](#contributors)
-- [Deploying Locally](#deployment)
 ## Features: 
 
 We use a total of three Machine Learning models: (1) identify hand joints for training data, (2) recognize American Sign Language words, and (3) process speech to text.
