@@ -7,7 +7,7 @@
 Uses Machine Learning to (1) convert American Sign Language to text and (2) convert real time live-stream speech to text. Circumvents racial and ethnic bias in training set due to original, self-made algorithm. Implemented with Python, HTML, CSS, JavaScript, and various other libraries.
 
 
-###Inspiration
+### Inspiration
 
 American Sign Language users can use our ASL-to-text platform as a means of learning, getting instant feedback on signed word arrangements, and as a means of expression to communicate with non-ASL users. Our video call-based speech-to-text converter also hosts transcribing capabilities not yet offered on popular platforms like WhatsApp, Line, and Discord. Heightened by COVID-19, those who are hard of hearing might have difficulty lip-reading or be unable to reproduce real life conversations over online platforms due to a host of reasons.
 
