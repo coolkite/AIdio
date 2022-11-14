@@ -85,7 +85,7 @@ Run main.py file
   </tr>
   <tr>
     <td align="center"><sub><b>Team Leader</br>Head Machine Learning Engineer</b></sub></a></td>
-    <td align="center"><sub><b>Lead Front-end Engineer</b>Full-Stack Assistant</sub></a></td>
+    <td align="center"><sub><b>Lead Front-end Engineer</br>Full-Stack Assistant</b></sub></a></td>
     <td align="center"><sub><b>Lead Back-end Engineer</b></sub></a></td>
     <td align="center"><sub><b>Lead Data Engineer and Deployment</br>Full Stack Assistant</b></sub></a></td>
   </tr>
