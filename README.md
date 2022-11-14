@@ -48,7 +48,7 @@ Configuring versions of Python to be compatible with different libraries. For an
 - Websockets
 - Numpy
 - JavaScript/HTML/CSS
--
+
 ## Accomplishments:
 
 We trained, processed, and deployed state-of-the-art, custom-made Machine Learning models and achieved a very high accuracy rate of above 97% for our ASL-to-text converter. Similarly, for the second part of our project, we successfully launched a web call client despite facing difficulties from security proxies, video lag disparities, and other related issues.
@@ -57,7 +57,7 @@ Every member of our team contributed wholeheartedly so we could complete our pro
 
 ## Future Directions
 
-With the exponentially low storage and time requirements comparing to most industrial training methods, we look forward to incorporating a more diverse dictionary of words and signs. We also hope to develop maintain an open source training platform, while researching and enabling the visualization of moving signs. We are also looking at other potential implimations of our model for low-scale rollout. Our model surpasses most other CNN models in terms of speed and ease of uploading new files, and we would love to help make the world more accessible.
+With the exponentially low storage and time requirements compared to most industrial training methods, we look forward to incorporating a more diverse dictionary of words and signs. We also hope to develop maintain an open source training platform, while researching and enabling the visualization of moving signs. We are also looking at other potential implimations of our model for low-scale rollout. Our model surpasses most other CNN models in terms of speed and ease of uploading new files, and we would love to help make the world more accessible.
 
 
 ## Deploying locally:
@@ -85,7 +85,7 @@ Run main.py file
   </tr>
   <tr>
     <td align="center"><sub><b>Team Leader</br>Head Machine Learning Engineer</b></sub></a></td>
-    <td align="center"><sub><b>Lead Front-end Engineer</b></sub></a></td>
+    <td align="center"><sub><b>Lead Front-end Engineer</b>Full-Stack Assistant</sub></a></td>
     <td align="center"><sub><b>Lead Back-end Engineer</b></sub></a></td>
     <td align="center"><sub><b>Lead Data Engineer and Deployment</br>Full Stack Assistant</b></sub></a></td>
   </tr>
