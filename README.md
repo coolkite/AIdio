@@ -66,7 +66,7 @@ With the exponentially low storage and time requirements compared to most indust
 
 Clone the repository at: 
 ```
-gh repo clone dmtrung14/AIdio
+gh repo clone coolkite/AIdio
 ```
 You want to clone the Website branch, not the main branch
 
